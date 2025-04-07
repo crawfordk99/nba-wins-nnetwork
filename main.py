@@ -53,6 +53,7 @@ def main():
     best_epoch: int = 0
 
     num_epochs = 100
+    final_epochs = 0
 
     acc_list = []
 
@@ -123,8 +124,10 @@ def main():
             
         acc_list.append(val_acc)
         # metric.reset
+        final_epochs += 1
+
     
-    epochs = range(1, num_epochs + 1)
+    epochs = range(1, final_epochs + 1)
 
     plt.figure(figsize=(10, 6))
     plt.plot(epochs, acc_list, label='Accuracy')
